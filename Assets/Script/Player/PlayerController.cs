@@ -13,12 +13,10 @@ public class PlayerController : MonoBehaviour
 
     [Header("Cameras")]
     [SerializeField] CameraController playerCameraController;
-   
-
+ 
     [Header("Animators")]
-    [SerializeField] Animator playerAnimator;
-    [SerializeField] Animator dogAnimator;
-
+    //[SerializeField] Animator playerAnimator;
+ 
     public PlayerModel model;
 
     private void Start()
