@@ -33,4 +33,9 @@ public class BasketballController : MonoBehaviour
         }
         
     }
+
+    public bool getHoldingBall()
+    {
+        return holdingBall;
+    }
 }
