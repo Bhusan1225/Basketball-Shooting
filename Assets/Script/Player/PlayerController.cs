@@ -37,7 +37,6 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         HandleMovement();
-        HandleCameraView();
 
         HandleBallThrow();
         HandleBallThrowingForce();
@@ -64,7 +63,7 @@ public class PlayerController : MonoBehaviour
 
     private void HandleBallThrow()
     {
-        if (Input.GetMouseButtonDown(0)) 
+        if (Input.GetMouseButtonDown(1)) 
         {
             projectileThrow.ThrowBasketBall();
         }
@@ -96,16 +95,5 @@ public class PlayerController : MonoBehaviour
         transform.rotation = Quaternion.RotateTowards(transform.rotation, model.RequiredRotation, rotSpeed * Time.deltaTime);
     }
 
-    void HandleCameraView()
-    {
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            //GameService.Instance.UIService.ActivateCamaraViewUI(true);
-        }
-        else if ( Input.GetKeyDown(KeyCode.V))
-        {
-            //GameService.Instance.UIService.ActivateCamaraViewUI(false);
-        }
-
-    }
+   
 }

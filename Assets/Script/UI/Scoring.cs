@@ -36,5 +36,15 @@ public class Scoring : MonoBehaviour
     }
 
 
+    public int GetScore()
+    {
+        return score;
+    }
+
+    public void SetScore(int point)
+    {
+          score = point;
+    }
+
 
 }
