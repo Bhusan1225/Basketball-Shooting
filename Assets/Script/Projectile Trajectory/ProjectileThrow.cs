@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -59,8 +60,16 @@ public class ProjectileThrow : MonoBehaviour
         thrownObject.AddForce(startPosition.forward * throwForce, ForceMode.Impulse);
     }
 
+    public float GetThrowForce()
+    {
+        return throwForce;
+    }
 
-
+    public void SetThrowForce(float updateThrowForce)
+    {
+       throwForce = updateThrowForce;
+        return;
+    }
 
 
 

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -19,14 +20,18 @@ public class PlayerController : MonoBehaviour
  
     public PlayerModel model;
 
-    [Header("Projectile")]
+    [Header("Projectile and Projectile Force")]
     ProjectileThrow projectileThrow;
+
+    [SerializeField] Slider throwForceSlider;
+    [SerializeField] float sliderscrollSensitivity = 1f;
 
     private void Start()
     {
         model = new PlayerModel();
         projectileThrow = gameObject.GetComponent<ProjectileThrow>();
-        
+        throwForceSlider.value = projectileThrow.GetThrowForce();
+        throwForceSlider.onValueChanged.AddListener(UpdateThrowForce);
     }
 
     private void Update()
@@ -35,6 +40,26 @@ public class PlayerController : MonoBehaviour
         HandleCameraView();
 
         HandleBallThrow();
+        HandleBallThrowingForce();
+    }
+
+    private void HandleBallThrowingForce()
+    {
+        if (Input.GetKey(KeyCode.Q))
+        {
+            throwForceSlider.value = Mathf.Min(throwForceSlider.value + sliderscrollSensitivity, throwForceSlider.maxValue);
+        }
+
+        if (Input.GetKey(KeyCode.E))
+        {
+            throwForceSlider.value = Mathf.Max(throwForceSlider.value - sliderscrollSensitivity, throwForceSlider.minValue);
+        }
+    }
+
+    void UpdateThrowForce(float newValue)
+    {
+        projectileThrow.SetThrowForce(newValue);
+       
     }
 
     private void HandleBallThrow()
