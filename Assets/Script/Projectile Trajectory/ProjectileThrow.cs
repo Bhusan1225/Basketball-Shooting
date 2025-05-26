@@ -16,7 +16,7 @@ public class ProjectileThrow : MonoBehaviour
     Transform startPosition;
 
     [SerializeField, Range(0.0f, 50.0f)]
-    float force;
+    float throwForce;
 
 
     private void OnEnable()
@@ -31,28 +31,32 @@ public class ProjectileThrow : MonoBehaviour
 
     private void Update()
     {
-        
+        Predict();
     }
 
     void Predict()
     {
-        //trajectoryPredictor.PredictTrajectory(ProjectileData());
+        trajectoryPredictor.PredictTrajectory(ProjectileData());
     }
 
     ProjectileProperties ProjectileData()
-
     {
         ProjectileProperties properties = new ProjectileProperties();
-        Rigidbody r = objectToThrow.GetComponent<Rigidbody>();
+        Rigidbody rb = objectToThrow.GetComponent<Rigidbody>();
 
         properties.direction = startPosition.forward;
         properties.initialPosition = startPosition.position;
-        properties.initialSpeed = force;
-        properties.mass = r.mass;
-        properties.drag = r.drag;
+        properties.initialSpeed = throwForce;
+        properties.mass = rb.mass;
+        properties.drag = rb.drag;
 
         return properties;
+    }
 
+    public void ThrowBasketBall()
+    {
+        Rigidbody thrownObject = Instantiate(objectToThrow, startPosition.position, Quaternion.identity);
+        thrownObject.AddForce(startPosition.forward * throwForce, ForceMode.Impulse);
     }
 
 

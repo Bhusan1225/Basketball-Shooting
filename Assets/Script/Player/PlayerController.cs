@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,24 +15,37 @@ public class PlayerController : MonoBehaviour
     [Header("Cameras")]
     [SerializeField] CameraController playerCameraController;
  
-    [Header("Animators")]
-    //[SerializeField] Animator playerAnimator;
+    
  
     public PlayerModel model;
+
+    [Header("Projectile")]
+    ProjectileThrow projectileThrow;
 
     private void Start()
     {
         model = new PlayerModel();
+        projectileThrow = gameObject.GetComponent<ProjectileThrow>();
         
     }
 
     private void Update()
     {
-        handleMovement();
-        handleCameraView();
+        HandleMovement();
+        HandleCameraView();
+
+        HandleBallThrow();
     }
 
-    void handleMovement()
+    private void HandleBallThrow()
+    {
+        if (Input.GetMouseButtonDown(0)) 
+        {
+            projectileThrow.ThrowBasketBall();
+        }
+    }
+
+    void HandleMovement()
     {
         // Ground Check
         model.IsGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
@@ -57,7 +71,7 @@ public class PlayerController : MonoBehaviour
         transform.rotation = Quaternion.RotateTowards(transform.rotation, model.RequiredRotation, rotSpeed * Time.deltaTime);
     }
 
-    void handleCameraView()
+    void HandleCameraView()
     {
         if (Input.GetKeyDown(KeyCode.C))
         {
