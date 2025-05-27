@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class Scoring : MonoBehaviour
+public class ScoringUI : MonoBehaviour
 {
     [SerializeField] int score;
     [SerializeField] TextMeshProUGUI scoreText;

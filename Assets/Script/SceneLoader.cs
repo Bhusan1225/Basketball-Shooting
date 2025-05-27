@@ -4,14 +4,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneLoader : MonoBehaviour
+public class SceneLoader : MonoBehaviour  
 {
-
+    [Header("Sceneloader Index")]
     [SerializeField] int lobbySceneIndex;
     [SerializeField] int practiceZoneSceneIndex;
     [SerializeField] int playZoneSceneIndex;
     [SerializeField] int arcadeChallengeSceneIndex;
 
+  
     public void LoadPracticeZone()
     {
         SceneManager.LoadScene(practiceZoneSceneIndex);

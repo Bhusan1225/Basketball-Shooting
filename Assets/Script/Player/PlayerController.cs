@@ -40,9 +40,20 @@ public class PlayerController : MonoBehaviour
 
         HandleBallThrow();
         HandleBallThrowingForce();
+
+        HandleModeSetting();
     }
 
-    private void HandleBallThrowingForce()
+    public void HandleModeSetting()
+    {
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
+            GameService.Instance.UIService.ModeSettingUI();
+        }
+        
+    }
+
+    public void HandleBallThrowingForce()
     {
         if (Input.GetKey(KeyCode.Q))
         {

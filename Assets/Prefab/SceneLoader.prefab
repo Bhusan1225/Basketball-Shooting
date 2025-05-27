@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7851089420434754906}
-  - component: {fileID: 6846824341656039483}
+  - component: {fileID: 1945756833340768590}
   m_Layer: 0
   m_Name: SceneLoader
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6846824341656039483
+--- !u!114 &1945756833340768590
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -44,5 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 824beb1464a7bcf4dbef73049142bb17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lobbySceneIndex: 0
   practiceZoneSceneIndex: 1
   playZoneSceneIndex: 2
+  arcadeChallengeSceneIndex: 3
