@@ -7,15 +7,10 @@ using UnityEngine.SceneManagement;
 public class SceneLoader : MonoBehaviour
 {
 
-   
-    
     [SerializeField] int lobbySceneIndex;
     [SerializeField] int practiceZoneSceneIndex;
     [SerializeField] int playZoneSceneIndex;
-    
-
-   
-
+    [SerializeField] int arcadeChallengeSceneIndex;
 
     public void LoadPracticeZone()
     {
@@ -30,6 +25,11 @@ public class SceneLoader : MonoBehaviour
     public void LoadLobby()
     {
         SceneManager.LoadScene(lobbySceneIndex);
+    }
+
+    public void LoadArcadeChallenge()
+    {
+        SceneManager.LoadScene(arcadeChallengeSceneIndex);
     }
 
 }

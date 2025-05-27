@@ -27,10 +27,10 @@ public class GameController : MonoBehaviour
     public Zone currentZone = Zone.Practice;
 
     [Header("Timer")]
-    [SerializeField] float timeRemaining ;
+    [SerializeField] float timeRemaining = 60f ;
     [SerializeField] TextMeshProUGUI timmerText;
     [SerializeField] bool timerIsRunning = false;
-     [SerializeField] GameObject gameOverPanel;
+    [SerializeField] GameObject gameOverPanel;
     [SerializeField] GameObject gameWinningPanel;
 
     [Header("Shooting Target")]
@@ -41,40 +41,27 @@ public class GameController : MonoBehaviour
 
     [SerializeField] GameObject practiceZoneSettingUI;
 
+    [Header("More Setting")]
+    [SerializeField] GameObject moreSettingPanel;
 
 
-    // void Start()
-    //{
-    //    if (currentZone == Zone.Practice)
-    //    {
-    //        timerIsRunning = true;
-    //        UpdateTargetDisplay();
-    //        Debug.Log("This is a practice zone");
 
-    //    }
-    //    else if (currentZone == Zone.Play)
-    //    {
-    //        timerIsRunning = true;
-    //        timmerText.text = "Timer: " + (int)timeRemaining;
-    //        target = Random.Range(5, target);
-    //        targetText.text = "Target:" + target;
-    //        GameDifficultyLevel();
-    //        Debug.Log("This is a play zone");
-    //    }
-    //}
 
     private void Start()
     {
         if (currentZone == Zone.Practice)
         {
+           Time.timeScale = 1f;
            timerIsRunning = true;
            UpdateTargetDisplay();
            Debug.Log("This is a practice zone");
 
-               }
-               else if (currentZone == Zone.Play)
+        }
+        else if (currentZone == Zone.ArcadeChallange || currentZone == Zone.Play)
         {
-            timerIsRunning = true;
+            Time.timeScale = 1f;
+            timerIsRunning = true; 
+            Debug.Log("timmerIsRunning is true");
             timmerText.text = "Timer: " + (int)timeRemaining;
             target = Random.Range(5, target);
             targetText.text = "Target:" + target;
@@ -107,18 +94,14 @@ public class GameController : MonoBehaviour
    
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Escape))
-        {
-            OpenPracticeZoneSetting();
-            
-        }
+        Debug.Log("This is a update - gameController");
 
         if (timerIsRunning)
         {
             if (timeRemaining > 0)
             {
                 timeRemaining -= Time.deltaTime;
-                Debug.Log("This is a play zone");
+                Debug.Log("time Remaining" + timeRemaining);
                 UpdateTimerDisplay();
 
             }
@@ -139,12 +122,28 @@ public class GameController : MonoBehaviour
                     Time.timeScale = 0f;
                 }
             }
+
+        }
+        else
+        {
+            Debug.Log("time running false");
+        }
+
+        if (Input.GetKeyUp(KeyCode.Escape) && currentZone == Zone.Practice)
+        {
+            OpenPracticeZoneSetting();
+
+        }else if (Input.GetKeyUp(KeyCode.Escape) && currentZone == Zone.ArcadeChallange || currentZone == Zone.Play)
+        {
+            OpenPlayZoneSetting();
         }
 
     }
 
-
-
+    private void OpenPlayZoneSetting()
+    {
+        moreSettingPanel.SetActive(true);
+    }
 
     public void OpenPracticeZoneSetting()
     {
@@ -152,7 +151,7 @@ public class GameController : MonoBehaviour
         Time.timeScale = 0f;
         target = (int)targetSetting.value;
         targetSetting.onValueChanged.AddListener(UpdateTarget);
-        
+        UpdateTargetDisplay();
     }
 
     private void UpdateTarget(float newTarget)
@@ -172,9 +171,6 @@ public class GameController : MonoBehaviour
         Time.timeScale = 1f;
     }
 
-    public void SetTimerBool()
-    {
-        timerIsRunning = true;
-    }
+
 
 }
