@@ -3438,7 +3438,7 @@ MonoBehaviour:
   targetText: {fileID: 470510328}
   target: 10
   playerScore: {fileID: 1231443531}
-  targetSetting: {fileID: 0}
+  targetSetting: {fileID: 413560203}
   practiceModeSettingUI: {fileID: 1658517146}
   moreSettingPanel: {fileID: 283740463}
 --- !u!4 &1000186873
