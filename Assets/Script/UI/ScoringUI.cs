@@ -14,7 +14,7 @@ public class ScoringUI : MonoBehaviour
         score = 0;
         scoreText.text = "Socre: " + score;
     }
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.layer == 6)
         {

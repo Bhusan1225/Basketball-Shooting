@@ -58,6 +58,8 @@ public class ProjectileThrow : MonoBehaviour
     {
         Rigidbody thrownObject = Instantiate(objectToThrow, startPosition.position, Quaternion.identity);
         thrownObject.AddForce(startPosition.forward * throwForce, ForceMode.Impulse);
+
+        Destroy(thrownObject, 30f);
     }
 
     public float GetThrowForce()

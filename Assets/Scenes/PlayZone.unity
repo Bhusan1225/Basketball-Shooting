@@ -2024,8 +2024,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Target
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 393ecaabec132c441817a9e74311d025, type: 2}
-  m_sharedMaterial: {fileID: -3862790498358534162, guid: 393ecaabec132c441817a9e74311d025,
+  m_fontAsset: {fileID: 11400000, guid: 42060e8eee3634c4f95636da1f692620, type: 2}
+  m_sharedMaterial: {fileID: -9215651737435528574, guid: 42060e8eee3634c4f95636da1f692620,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -3430,7 +3430,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameLevelText: {fileID: 1281409193}
   currentMode: 2
-  timeRemaining: 20
+  timeRemaining: 70
   timmerText: {fileID: 1300538180}
   timerIsRunning: 0
   gameOverPanel: {fileID: 584394829}
@@ -3775,7 +3775,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: 0
   scoreText: {fileID: 1469648682}
-  increament: 1
+  increament: 2
 --- !u!65 &1231443532
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4151,8 +4151,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Level
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 393ecaabec132c441817a9e74311d025, type: 2}
-  m_sharedMaterial: {fileID: -3862790498358534162, guid: 393ecaabec132c441817a9e74311d025,
+  m_fontAsset: {fileID: 11400000, guid: 42060e8eee3634c4f95636da1f692620, type: 2}
+  m_sharedMaterial: {fileID: -9215651737435528574, guid: 42060e8eee3634c4f95636da1f692620,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -4413,8 +4413,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Timer:00
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 393ecaabec132c441817a9e74311d025, type: 2}
-  m_sharedMaterial: {fileID: -3862790498358534162, guid: 393ecaabec132c441817a9e74311d025,
+  m_fontAsset: {fileID: 11400000, guid: 42060e8eee3634c4f95636da1f692620, type: 2}
+  m_sharedMaterial: {fileID: -9215651737435528574, guid: 42060e8eee3634c4f95636da1f692620,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -4622,6 +4622,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1340232428}
   m_CullTransparentMesh: 1
+--- !u!4 &1341108806 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4488830176440411014, guid: 22acd7dc3f4141d4da50e195ed06de3a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1925994738}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &1341108808 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 1802903996691596319, guid: 22acd7dc3f4141d4da50e195ed06de3a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1925994738}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1437582647
 GameObject:
   m_ObjectHideFlags: 0
@@ -4756,8 +4768,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Socre:00
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 393ecaabec132c441817a9e74311d025, type: 2}
-  m_sharedMaterial: {fileID: -3862790498358534162, guid: 393ecaabec132c441817a9e74311d025,
+  m_fontAsset: {fileID: 11400000, guid: 42060e8eee3634c4f95636da1f692620, type: 2}
+  m_sharedMaterial: {fileID: -9215651737435528574, guid: 42060e8eee3634c4f95636da1f692620,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -5127,7 +5139,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 590025648}
         m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
         m_MethodName: LoadLobby
         m_Mode: 1
@@ -6307,6 +6319,7 @@ Transform:
   - {fileID: 330585546}
   - {fileID: 7557611317753834576}
   - {fileID: 34433939}
+  - {fileID: 1341108806}
   - {fileID: 1684075789}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6445,6 +6458,74 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1861812518}
   m_CullTransparentMesh: 1
+--- !u!1001 &1925994738
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1832963059}
+    m_Modifications:
+    - target: {fileID: 2838617836390486361, guid: 22acd7dc3f4141d4da50e195ed06de3a,
+        type: 3}
+      propertyPath: m_Name
+      value: Basketball (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4488830176440411014, guid: 22acd7dc3f4141d4da50e195ed06de3a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.491
+      objectReference: {fileID: 0}
+    - target: {fileID: 4488830176440411014, guid: 22acd7dc3f4141d4da50e195ed06de3a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4488830176440411014, guid: 22acd7dc3f4141d4da50e195ed06de3a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.482
+      objectReference: {fileID: 0}
+    - target: {fileID: 4488830176440411014, guid: 22acd7dc3f4141d4da50e195ed06de3a,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4488830176440411014, guid: 22acd7dc3f4141d4da50e195ed06de3a,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4488830176440411014, guid: 22acd7dc3f4141d4da50e195ed06de3a,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4488830176440411014, guid: 22acd7dc3f4141d4da50e195ed06de3a,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4488830176440411014, guid: 22acd7dc3f4141d4da50e195ed06de3a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4488830176440411014, guid: 22acd7dc3f4141d4da50e195ed06de3a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4488830176440411014, guid: 22acd7dc3f4141d4da50e195ed06de3a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 22acd7dc3f4141d4da50e195ed06de3a, type: 3}
 --- !u!1 &1997015133
 GameObject:
   m_ObjectHideFlags: 0
@@ -8971,7 +9052,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e643fed7e66f081419c130cb4795da7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToThrow: {fileID: 34433935}
+  objectToThrow: {fileID: 1341108808}
   startPosition: {fileID: 3492138822944324682}
   throwForce: 11.9
 --- !u!1 &6279689894409927996
@@ -9811,8 +9892,8 @@ LineRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.01505661
-        value: 0.22877693
+        time: 0
+        value: 0.048128128
         inSlope: 0
         outSlope: 0
         tangentMode: 0
