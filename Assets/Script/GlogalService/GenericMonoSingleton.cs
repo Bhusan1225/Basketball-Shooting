@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class GenericMonoSingleton<T> : MonoBehaviour where T : GenericMonoSingleton<T>
 {
+    /// <summary>
+    /// This is generic singleton for building centerlize system (service locator - game service) 
+    /// </summary>
     private static T instance;
     public static T Instance
     {

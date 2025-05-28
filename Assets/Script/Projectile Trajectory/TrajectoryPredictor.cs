@@ -6,6 +6,10 @@ using UnityEngine;
 [RequireComponent(typeof(LineRenderer))]
 public class TrajectoryPredictor : MonoBehaviour
 {
+
+    /// <summary>
+    /// This scripts handles the view of ball throwing trajectory projection 
+    /// </summary>
     LineRenderer trajectoryLine;
     [SerializeField, Tooltip("The marker will show where the projectile will hit")]
     Transform hitMarker;
@@ -72,6 +76,7 @@ public class TrajectoryPredictor : MonoBehaviour
 
     private void MoveHitMarker(RaycastHit hit)
     {
+        //This will show the bull's eye where the projection hits a surface
         hitMarker.gameObject.SetActive(true);
 
         // Offset marker from surface

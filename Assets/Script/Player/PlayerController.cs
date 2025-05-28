@@ -7,6 +7,10 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
 
+    /// <summary>
+    /// this script handles the player inputs - followed the MVC design pattern
+    /// </summary>
+
     [Header("Movement")]
     [SerializeField] float rotSpeed = 600f;
     [SerializeField] Transform groundCheck;
@@ -14,10 +18,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] LayerMask groundMask;
 
     [Header("Cameras")]
-    [SerializeField] CameraController playerCameraController;
- 
-    
- 
+    [SerializeField] CameraController playerCameraController; 
+
     public PlayerModel model;
 
     [Header("Projectile and Projectile Force")]
@@ -36,9 +38,9 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        HandleMovement();
+        HandleMovement();                 
 
-        HandleBallThrow();
+        HandleBallThrow();                
         HandleBallThrowingForce();
 
         HandleModeSetting();
@@ -55,12 +57,14 @@ public class PlayerController : MonoBehaviour
 
     public void HandleBallThrowingForce()
     {
-        if (Input.GetKey(KeyCode.Q))
+        // set your force through Q(to reduce the force) and E (to increase the force)
+        
+        if (Input.GetKey(KeyCode.E))
         {
             throwForceSlider.value = Mathf.Min(throwForceSlider.value + sliderscrollSensitivity, throwForceSlider.maxValue);
         }
 
-        if (Input.GetKey(KeyCode.E))
+        if (Input.GetKey(KeyCode.Q))
         {
             throwForceSlider.value = Mathf.Max(throwForceSlider.value - sliderscrollSensitivity, throwForceSlider.minValue);
         }
@@ -68,12 +72,14 @@ public class PlayerController : MonoBehaviour
 
     void UpdateThrowForce(float newValue)
     {
+        // Update the force of the ball's projectile
         projectileThrow.SetThrowForce(newValue);
        
     }
 
     private void HandleBallThrow()
     {
+        //Instanciate a ball
         if (Input.GetMouseButtonDown(1)) 
         {
             projectileThrow.ThrowBasketBall();
@@ -82,12 +88,13 @@ public class PlayerController : MonoBehaviour
 
     void HandleMovement()
     {
+        //player movement
         // Ground Check
         model.IsGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
         if (model.IsGrounded && model.Velocity.y < 0)
             model.Velocity.y = -5f;
 
-        // Input
+        // Player input
         model.MoveX = Input.GetAxisRaw("Horizontal");
         model.MoveZ = Input.GetAxisRaw("Vertical");
         model.MovementAmount = Mathf.Clamp01(Mathf.Abs(model.MoveX) + Mathf.Abs(model.MoveZ));
@@ -102,7 +109,7 @@ public class PlayerController : MonoBehaviour
             model.RequiredRotation = Quaternion.LookRotation(model.MovementDirection);
         }
 
-        // Rotation
+        // Player rotation
         transform.rotation = Quaternion.RotateTowards(transform.rotation, model.RequiredRotation, rotSpeed * Time.deltaTime);
     }
 

@@ -5,9 +5,13 @@ using UnityEngine;
 
 public class ScoringUI : MonoBehaviour
 {
+
+    /// <summary>
+    /// This  scripts handles the score system of the game 
+    /// </summary>
     [SerializeField] int score;
     [SerializeField] TextMeshProUGUI scoreText;
-    [SerializeField] int increament = 1;
+    [SerializeField] int increament = 1; // you a set the point increment in each shoot
 
     private void Start()
     {
@@ -25,16 +29,10 @@ public class ScoringUI : MonoBehaviour
 
     public void AddPoints(int points)
     {
+        //Increase the point when the player shoots net
         score += points;
         scoreText.text = "Socre: " + score;
     }
-
-    public void ReducePoints(int points)
-    {
-        score -= points;
-        scoreText.text = "Socre: " + score;
-    }
-
 
     public int GetScore()
     {
@@ -45,6 +43,4 @@ public class ScoringUI : MonoBehaviour
     {
           score = point;
     }
-
-
 }

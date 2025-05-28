@@ -6,6 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour  
 {
+
+    /// <summary>
+    /// This scripts manages the scene loading through their index number. And use the button event system here.
+    /// </summary>
+    
+
     [Header("Sceneloader Index")]
     [SerializeField] int lobbySceneIndex;
     [SerializeField] int practiceZoneSceneIndex;

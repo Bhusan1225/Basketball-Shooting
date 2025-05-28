@@ -2742,7 +2742,7 @@ MonoBehaviour:
   gameWinningPanel: {fileID: 225012016}
   targetText: {fileID: 470510328}
   target: 8
-  playerScore: {fileID: 0}
+  playerScore: {fileID: 1115890991968417138}
   targetSetting: {fileID: 1885935418}
   practiceModeSettingUI: {fileID: 768956859}
   moreSettingPanel: {fileID: 1419155738}
@@ -9792,8 +9792,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 0.5463178, z: 1}
+  m_Center: {x: 0, y: -0.22684109, z: 0}
 --- !u!4 &8291790644352868200
 Transform:
   m_ObjectHideFlags: 0

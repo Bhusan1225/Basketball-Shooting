@@ -4,23 +4,15 @@ using UnityEngine;
 
 public class GameService : GenericMonoSingleton<GameService>
 {
+
+    /// <summary>
+    /// This scripts will makes the services centerlize, now there is only one service but in future when services will increase it will be helpful
+    /// 
+    /// </summary>
     [Header("UI service")]
     [SerializeField]
     private UIServices uiService;
-    public UIServices UIService => uiService; //linked the UI service for global use
+    public UIServices UIService => uiService; //Linked the UI service for global use
 
     
-    
-
-    // Start is called before the first frame update
-    void Start()
-    {
-      
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

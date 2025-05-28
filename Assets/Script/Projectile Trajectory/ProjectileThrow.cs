@@ -11,10 +11,10 @@ public class ProjectileThrow : MonoBehaviour
     TrajectoryPredictor trajectoryPredictor;
 
     [SerializeField]
-    Rigidbody objectToThrow;
+    Rigidbody objectToThrow; //Set the object you want to throw 
 
     [SerializeField]
-    Transform startPosition;
+    Transform startPosition; // Set the start position of throwing ball
 
     [SerializeField, Range(0.0f, 50.0f)]
     float throwForce;
@@ -56,6 +56,8 @@ public class ProjectileThrow : MonoBehaviour
 
     public void ThrowBasketBall()
     {
+
+
         Rigidbody thrownObject = Instantiate(objectToThrow, startPosition.position, Quaternion.identity);
         thrownObject.AddForce(startPosition.forward * throwForce, ForceMode.Impulse);
 

@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
+    /// <summary>
+    /// This script makes the camera follow the target here the player is the target. 
+    /// </summary>
     [SerializeField] Transform target;
-    [SerializeField] float cameraGap = 2f;
-    [SerializeField] float cameraHeight = 1f;
-
+    [SerializeField] float cameraGap = 2f;          // you can adjust the the offset of the camera(gap between the target and player)
+    [SerializeField] float cameraHeight = 1f;       // you can adjust the the height of the camera
     float rotX;
     float rotY;
 
-    [SerializeField] float minVarAngle = -45f;
-    [SerializeField] float maxVarAngle = 45f;
-    [SerializeField] internal bool isThirdPersonActive;
+    [SerializeField] float minVarAngle = -45f;      // clamp the camera rotation
+    [SerializeField] float maxVarAngle = 45f;       // clamp the camera rotation
+    [SerializeField] internal bool isThirdPersonActive; // set the camera to first person or third person
 
     void Start()
     {
