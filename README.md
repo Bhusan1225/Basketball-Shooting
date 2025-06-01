@@ -29,3 +29,6 @@ A fast-paced mode featuring a moving target. Test your precision and timing in t
 ## Code Architecture
 
 To ensure a modular, scalable, and reusable codebase, this project utilizes several essential software design patterns. These patterns help keep the code organized, maintainable, and ready for future updates or expansions.
+
+[Basket BrawlUML.pdf](https://github.com/user-attachments/files/20541188/Basket.BrawlUML.pdf)
+
