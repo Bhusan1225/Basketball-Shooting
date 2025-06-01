@@ -1,65 +1,31 @@
-*Basketball-2D*
-A classic arcade-style basketball shooting game built in Unity, where players test their timing and aim to score as many baskets as possible. The game focuses on fast-paced, engaging single-player gameplay, enhanced with dynamic hoops, power-ups, and score-based challenges. With intuitive controls and addictive mechanics, it's perfect for players of all skill levels.
+# Basket Brawn
 
-Features
-Controls & Movement
-Drag and release to aim and shoot (or use keyboard controls if configured)
+**Basket Brawn** is a PC basketball shooting game focused on enhancing your shooting skills through immersive gameplay modes. Designed for precision, speed, and fun, this game offers multiple modes to improve your aim and reaction time through engaging challenges.
 
-The ball follows a realistic arc based on shot force and direction
+---
 
-Adjustable shot strength for precise aiming
+## Controls
 
-Game Modes
-Classic Mode: Score as many baskets as possible within a time limit
+- **W / A / S / D** – Move the player
+- **Right Mouse Button** – Shoot
+- **Left Mouse Button** – Select options or interact with UI
+- **Q / E** – Decrease / Increase shot force mode
 
-Endless Mode: Keep playing until you miss too many shots
+---
 
-Challenge Mode: Complete specific tasks like timed trick shots or moving targets
+## Game Modes
 
-Power-Ups
-Double Points: Temporarily doubles all points earned
+### Practice Mode
+Hone your aiming and shooting skills. Set your own targets for focused training and skill improvement.
 
-Magnet Hoop: Slightly attracts the ball toward the basket
+### Play Mode
+Compete against AI-assigned targets. Hit the required score to win the game.
 
-Slow Time: Slows the game speed to allow better aiming
+### Arcade Challenge Mode
+A fast-paced mode featuring a moving target. Test your precision and timing in this ultimate challenge.
 
-Ball & Hoop Mechanics
-Realistic bounce physics: Ball responds naturally to rim, backboard, and court
+---
 
-Dynamic hoops: Hoops may move side to side, change height, or shrink in harder levels
+## Code Architecture
 
-Perfect shot bonus: Clean swish shots earn extra points
-
-Power-Up Spawning & Cooldown
-Power-ups spawn randomly on the court
-
-Each power-up has a customizable cooldown (default is 5 seconds)
-
-Active effects last for a short duration (configurable)
-
-Scoring System
-Normal basket: 2 points
-
-Long-range basket: 3 points
-
-Bonus points for trick shots or consecutive hits
-
-UI & Game Controls
-Score display: Real-time score and active power-up indicators
-
-Timer: Counts down remaining game time (if in timed mode)
-
-Game screens: Includes start screen, pause/resume, restart, and game over screens
-
-How to Play
-Single Player Mode
-Drag to aim or use directional input
-
-Release to shoot the ball
-
-Score as many points as you can before time runs out
-
-Collect power-ups to boost your score or gain shooting advantages
-
-Avoid missing too many shots to keep the streak going
-
+To ensure a modular, scalable, and reusable codebase, this project utilizes several essential software design patterns. These patterns help keep the code organized, maintainable, and ready for future updates or expansions.
